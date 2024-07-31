@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Home page</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="static/CSS/chatbot.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+		/>
+
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	</head>
+	<body>
+		<section style="height: 100vh" id="mainBody">
+			<div
+				id="leftBody"
+				class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
+				style="width: 280px; height: 100%"
+			>
+				<a
+					href="/"
+					class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+				>
+					<svg class="bi pe-none me-2" width="40" height="32">
+						<use xlink:href="#bootstrap"></use>
+					</svg>
+					<span class="fs-4">
+						<img
+							src="static/Images/indexPage/logo.jpg"
+							height="50px"
+							width="50px"
+							style="border-radius: 100%"
+						/>
+						WorkerHelp</span
+					>
+				</a>
+				<hr />
+				<ul class="nav nav-pills flex-column mb-auto">
+					<li class="nav-item">
+						<a href="/" class="nav-link text-white" aria-current="page">
+							<i class="bi bi-house-door-fill"></i>
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="#" class="nav-link text-white">
+							<i class="bi bi-speedometer"></i>
+							Dashboard
+						</a>
+					</li>
+					<li>
+						<a href="/chatbot" class="nav-link active">
+							<i class="bi bi-bug-fill"></i>
+							TroubleShoot
+						</a>
+					</li>
+					<li>
+						<a href="/Toolinfo" class="nav-link text-white">
+							<i class="bi bi-tools"></i>
+							Tools Info
+						</a>
+					</li>
+					<li>
+						<a href="#" class="nav-link text-white">
+							<i class="bi bi-telephone-fill"></i>
+							Contact
+						</a>
+					</li>
+				</ul>
+				<hr />
+				<div class="dropdown">
+					<a
+						href="#"
+						class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+					>
+						<img
+							src="https://github.com/mdo.png"
+							alt=""
+							width="32"
+							height="32"
+							class="rounded-circle me-2"
+						/>
+						<strong>mdo</strong>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+						<li><a class="dropdown-item" href="#">New project...</a></li>
+						<li><a class="dropdown-item" href="#">Settings</a></li>
+						<li><a class="dropdown-item" href="#">Profile</a></li>
+						<li><hr class="dropdown-divider" /></li>
+						<li><a class="dropdown-item" href="#">Sign out</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!--  -->
+			<div id="rightBody">
+				<nav class="navbar bg-dark flex-row">
+					<div
+						class="container-fluid"
+						style="
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+						"
+					>
+						<div style="display: flex">
+							<img
+								src="static/Images/chatbotPage/logo.gif"
+								alt=""
+								width="135"
+								height="100"
+								class="d-inline-block align-text-top"
+							/>
+							<a
+								class="navbar-brand"
+								style="
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									color: white;
+									font-size: 2rem;
+									text-align: center;
+								"
+								href="#"
+							>
+								TroubleShooter
+							</a>
+						</div>
+						<div
+							style="
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								gap: 30px;
+								margin: 1rem;
+							"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="32"
+								height="32"
+								fill="white"
+								class="bi bi-file-earmark-arrow-up-fill"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6.354 9.854a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 8.707V12.5a.5.5 0 0 1-1 0V8.707z"
+								/>
+							</svg>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="32"
+								height="32"
+								fill="white"
+								class="bi bi-person-lines-fill"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"
+								/>
+							</svg>
+						</div>
+					</div>
+				</nav>
+
+				<div class="chat-container" id="chat-container">
+					
+					
+					
+					<!-- Chat messages will appear here -->
+				</div>
+					<div class="input-container">
+						
+						<input
+							type="text"
+							id="user-input"
+							name="user_message"
+							placeholder="Type your message..."
+						/>
+						<input type="text" id="response" placeholder="Type your message..." style="display: none;"/>
+						<button
+							class="btn btn-primary"
+							id="send-btn"
+							
+							onclick="sendMessage()"
+						>
+							Send
+						</button>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
+
+		
+
+		<script>
+			
+			
+			function sendMessage() {
+			
+				var userInput = document.getElementById("user-input").value;
+				
+				var response = document.getElementById("response").value;
+
+				
+
+				
+	
+				if (userInput.trim() === "") {
+					return;
+				}
+	
+				appendMessage("user", userInput);
+	
+				// Simulate a response from the chatbot (you can replace this with your actual chatbot logic)
+				// take response from the flask server at /response route
+				fetch("/response", {
+					method: "POST",
+					body: JSON.stringify({ user_message: userInput }),
+					headers: {
+						"Content-Type": "application/json",
+					},
+				})
+					.then((response) => response.json())
+					.then((data) => {
+						appendMessage("bot", data.response);
+					});
+					console.log(data.response);
+	
+				// Clear the user input
+				document.getElementById("user-input").value = "";
+			}
+	
+			function appendMessage(sender, message) {
+				var chatContainer = document.getElementById("chat-container");
+				var messageDiv = document.createElement("div");
+				messageDiv.classList.add("message");
+	
+				if (sender === "user") {
+					messageDiv.classList.add("user-message");
+				} else {
+					messageDiv.classList.add("bot-message");
+					 message = marked.parse(message);
+				}
+	
+				messageDiv.innerHTML = `
+					<div style="display: flex; align-items: center;">
+						${sender === "bot" ? '<img src="static/Images/chatbotPage/robot.png" alt="Bot Avatar" class="bot-avatar">' : ''}
+						${sender === "user" ? '<img src="static/Images/chatbotPage/worker.png" alt="User Avatar" class="bot-avatar">' : ''}
+						<div>${message}</div>
+					</div>
+				`;
+				chatContainer.appendChild(messageDiv);
+	
+				// Scroll to the bottom of the chat container
+				chatContainer.scrollTop = chatContainer.scrollHeight;
+			}
+		</script>
+	</body>
+</html>

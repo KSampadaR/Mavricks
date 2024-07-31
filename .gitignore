@@ -1,0 +1,6 @@
+.dist
+.idea
+.venv
+.vscode
+PPT
+__pycache__

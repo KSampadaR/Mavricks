@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Information</title>
+    <style>
+        .tool-info {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-section, .description-section, .images-section {
+            margin-bottom: 20px;
+        }
+        .images-section img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="tool-info" id="toolInfo">
+        <!-- Tool information will be injected here -->
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Fetch and display tool information
+        async function displayToolInfo() {
+            const toolName = getQueryParam('toolName');
+            if (!toolName) {
+                document.getElementById('toolInfo').innerHTML = '<p>No tool name provided.</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch('tools.json');
+                const data = await response.json();
+                const tool = data.tool.find(item => item.tool_name.toLowerCase() === toolName.toLowerCase());
+
+                if (tool) {
+                    const videoID = new URL(tool.tool_vid_link).searchParams.get('v');
+                    const embedURL = `https://www.youtube.com/embed/${videoID}`;
+                    
+                    document.getElementById('toolInfo').innerHTML = `
+                        <div class='video-section'>
+                            <h1>${tool.tool_name}</h1>
+                            <iframe width='560' height='315' src='${embedURL}' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                        </div>
+                        <div class='description-section'>
+                            <p>${tool.tool_info}</p>
+                        </div>
+                        <div class='images-section'>
+                            <img src='${tool.tool_img1_link}' alt='Tool Image 1'>
+                            <img src='${tool.tool_img2_link}' alt='Tool Image 2'>
+                            <img src='${tool.tool_img3_link}' alt='Tool Image 3'>
+                        </div>
+                    `;
+                } else {
+                    document.getElementById('toolInfo').innerHTML = '<p>Tool not found. Please check the tool name and try again.</p>';
+                }
+            } catch (error) {
+                document.getElementById('toolInfo').innerHTML = '<p>Error loading tool information.</p>';
+                console.error('Error:', error);
+            }
+        }
+
+        displayToolInfo();
+    </script>
+</body>
+</html>
