@@ -1,0 +1,11 @@
+Model Information:
+* title:	Power Drill
+* source:	https://sketchfab.com/3d-models/power-drill-4ae5704a3e18489d8c8001eb11ca7f14
+* author:	Tomek Suchodolski (https://sketchfab.com/XID3)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Power Drill" (https://sketchfab.com/3d-models/power-drill-4ae5704a3e18489d8c8001eb11ca7f14) by Tomek Suchodolski (https://sketchfab.com/XID3) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

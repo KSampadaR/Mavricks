@@ -1,0 +1,11 @@
+langchain
+unstructured
+tiktoken
+pinecone-client
+pypdf
+langchain_pinecone
+langchain-community
+PyPDF2
+sentence_transformers
+groq
+langchain-groq
